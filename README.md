@@ -5,15 +5,56 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/envor/one-app/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/envor/one-app/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/envor/one-app.svg?style=flat-square)](https://packagist.org/packages/envor/one-app)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+steps
+create repo
 
-## Support us
+```bash
+laravel new one-app --stack=livewire --pest --jet --teams --dark --api --dev --github="--public
+```
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/one-app.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/one-app)
+```bash
+cd one-app
+```
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+set up package build dir
+
+```bash
+mkdir dev-package
+```
+
+```bash
+cd dev-package
+```
+
+setup package skeleton
+
+```bash
+gh repo create envor/one-app --template spatie/package-skeleton-laravel --clone --private
+```
+
+
+```bash
+cd one-app
+```
+
+```bash
+cd php ./configure.php
+```
+
+```bash
+composer require inmanturbo/turbohx envor/laravel-datastore livewire/volt
+```
+
+```bash
+cd ..
+cd ..
+```
+
+```bash
+composer require inmanturbo/turbohx envor/laravel-datastore livewire/volt
+
+
 
 ## Installation
 
