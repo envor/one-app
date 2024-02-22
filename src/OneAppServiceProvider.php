@@ -2,9 +2,9 @@
 
 namespace Envor\OneApp;
 
+use Envor\OneApp\Commands\OneAppCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Envor\OneApp\Commands\OneAppCommand;
 
 class OneAppServiceProvider extends PackageServiceProvider
 {
