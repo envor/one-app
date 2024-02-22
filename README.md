@@ -53,7 +53,15 @@ cd ..
 
 ```bash
 composer require inmanturbo/turbohx envor/laravel-datastore livewire/volt
+```
 
+checkout a new branch
+
+```bash
+git checkout -b dev-package
+```
+
+hack hack hack
 
 
 ## Installation
