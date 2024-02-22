@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Envor\OneApp\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class OneAppCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'one-app';
 
     public $description = 'My command';
 
