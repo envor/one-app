@@ -63,6 +63,9 @@ git checkout -b dev-package
 
 hack hack hack
 
+```bash
+build.sh dev-package dev-package/one-app/stub
+```
 
 ## Installation
 
