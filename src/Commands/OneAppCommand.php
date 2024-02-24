@@ -16,7 +16,7 @@ class OneAppCommand extends Command
         $this->info('Installing Jetstream...');
 
         $this->callSilent('jetstream:install', [
-            'stack' => 'livewire', 
+            'stack' => 'livewire',
             '--teams' => true,
             '--dark' => true,
             '--api' => true,
@@ -56,7 +56,7 @@ class OneAppCommand extends Command
             File::copy($sourceFile = $file->getPathname(), $destinationFilePath);
             // check verbosity
             if ($this->output->isVerbose()) {
-                $this->line('<info>Copied</info> '.$sourceFile . ' <info>to</info> ' . $destinationFilePath);
+                $this->line('<info>Copied</info> '.$sourceFile.' <info>to</info> '.$destinationFilePath);
             }
         }
     }
