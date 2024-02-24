@@ -5,6 +5,8 @@ namespace App\Actions\Jetstream;
 use App\Models\Team;
 use App\Models\User;
 use Closure;
+use Envor\Platform\Concerns\UsesPlatformConnection;
+use Illuminate\Database\DatabaseManager;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Contracts\AddsTeamMembers;
@@ -15,10 +17,21 @@ use Laravel\Jetstream\Rules\Role;
 
 class AddTeamMember implements AddsTeamMembers
 {
+
+    use UsesPlatformConnection;
+
     /**
      * Add a new team member to the given team.
      */
     public function add(User $user, Team $team, string $email, ?string $role = null): void
+    {
+        app(DatabaseManager::class)->usingConnection($this->getConnectionName(), fn () => $this->execute($user, $team, $email, $role));
+    }
+
+    /**
+     * Add a new team member to the given team.
+     */
+    protected function execute(User $user, Team $team, string $email, ?string $role = null): void
     {
         Gate::forUser($user)->authorize('addTeamMember', $team);
 
