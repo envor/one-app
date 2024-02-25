@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.5 - 2024-02-25
+
+### What's Changed
+
+* configure queue and job connections by @inmanturbo in https://github.com/envor/one-app/pull/5
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.4...v1.0.5
+
 ## v1.0.4 - 2024-02-25
 
 ### What's Changed
