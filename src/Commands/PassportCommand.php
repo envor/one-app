@@ -20,7 +20,7 @@ class PassportCommand extends Command
     {
 
         $this->copyFiles();
-        
+
         $this->simpleReplaceInFile('Laravel\\Sanctum\\HasApiTokens', 'Laravel\\Passport\\HasApiTokens', app_path('Models/User.php'));
 
         $provider = in_array('users', array_keys(config('auth.providers'))) ? 'users' : null;
@@ -43,7 +43,7 @@ class PassportCommand extends Command
         return 0;
     }
 
-        /**
+    /**
      * Configure Passport for client UUIDs.
      *
      * @return void
@@ -122,7 +122,7 @@ class PassportCommand extends Command
         }
     }
 
-        /**
+    /**
      * Replace a given string within a given file.
      *
      * @param  string  $search
