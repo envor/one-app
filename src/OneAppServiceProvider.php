@@ -3,6 +3,7 @@
 namespace Envor\OneApp;
 
 use Envor\OneApp\Commands\OneAppCommand;
+use Envor\OneApp\Commands\PassportCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -20,6 +21,9 @@ class OneAppServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_one-app_table')
-            ->hasCommand(OneAppCommand::class);
+            ->hasCommands([
+                OneAppCommand::class,
+                PassportCommand::class,
+            ]);
     }
 }

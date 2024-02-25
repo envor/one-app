@@ -20,6 +20,7 @@
         "envor/laravel-datastore": "^1.2",
         "envor/laravel-schema-macros": "^1.1",
         "envor/platform": "^1.5",
+        "headerx/laravel-jetstream-passport": "^1.0",
         "illuminate/contracts": "^11.0",
         "inmanturbo/turbohx": "^1.1",
         "laravel/jetstream": "^5.0@dev",

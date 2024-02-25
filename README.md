@@ -23,6 +23,10 @@ laravel new one-app --dev
 composer create project "laravel/laravel:11.x-dev" one-app
 ```
 
+```bash
+cd one-app
+```
+
 Then you can install the package via composer:
 
 ```bash
@@ -33,29 +37,59 @@ composer require envor/one-app
 php artisan one-app:install
 ```
 
+To Configure your platform database (aka `central` or `landlord` database, etc..)
+
+Add the following key to your `.env` file:
+
+```ini
+PLATFORM_DB_CONNECTION=sqlite
+```
+
+> [!NOTE]  
+> Sqlite is the default. You can set it to the name of any other connection you wish.
+>
+
+Next, freshen your migrations, using the `database/migration/platform` path, and the name of your `PLATFORM_DB_CONNECTION`
+
+```bash
+php artisan migrate:fresh --path=database/migrations/platform --database=sqlite
+```
+
+You can now test your application to ensure everything is working properly!
+
+```bash
+php artisan test
+```
+
 ## SSO (Optional)
 
-Install headerx/laravel-jestream-passport
+If you need it you can set up `one-app` to use laravel/passport instead of `laravel/sanctum` which will include a full OAuth2 Server, complete with self a token and client management ui.
+
+Install headerx/laravel-jetstream-passport
 
 ```bash
-composer require headerx/laravel-jetstream-passport
+composer require headerx/laravel-jetstream-passport:^1.0
 ```
 
 ```bash
-php artisan jetstream-passport:install
+php artisan one-app:passport
 ```
 
-Move passport migrations to the platform folder
-
-```bash
-mv database/migrations/*oauth*.php database/migrations/platform
-```
+Then run migrations
 
 ```bash
-php artisan migrate:fresh --path="database/migrations/platform" --database="sqlite"
+php artisan migrate --path="database/migrations/platform" --database="sqlite"
 ```
+
+Then run tests again!
 
 ## Testing
+
+```bash
+php artisan test
+```
+
+or
 
 ```bash
 composer test
