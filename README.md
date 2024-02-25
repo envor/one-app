@@ -46,7 +46,7 @@ PLATFORM_DB_CONNECTION=sqlite
 ```
 
 > [!NOTE]  
-> Sqlite is the default. You can set it to the name of any other connection you wish.
+> If you use a connection other than sqlite, you will have to ensure you have configured you credentials for the connection
 >
 
 Next, freshen your migrations, using the `database/migration/platform` path, and the name of your `PLATFORM_DB_CONNECTION`
