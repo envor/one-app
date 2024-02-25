@@ -16,7 +16,7 @@ use Tests\TestCase;
 |
 */
 
-uses(TestCase::class, RefreshDatabase::class)
+uses(TestCase::class)
     ->beforeEach(function () {
 
         Datastore::fake();
