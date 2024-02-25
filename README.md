@@ -213,7 +213,7 @@ Edit files in `one-app/` directory
 
 10. Test your changes by repeating steps 3-7.
 11. Repeat steps 8-10
-12. Repeat step 11.
+12. Repeat step 11 as many times as needed.
 
 ## Changelog
 
