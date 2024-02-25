@@ -74,5 +74,4 @@ jobs:
       - name: Execute tests
         run: vendor/bin/pest
         env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: ":memory:"
+          PLATFORM_DB_CONNECTION: testing_platform
