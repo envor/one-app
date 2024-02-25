@@ -56,7 +56,6 @@ jobs:
       - name: Install Jetstream
         run: |
           composer update "laravel/jetstream" --prefer-dist --no-interaction --no-progress -W
-          php artisan jetstream:install livewire --api --dark --pest --no-interaction
       
       - name: Install One App
         run: |
