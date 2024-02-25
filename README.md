@@ -197,7 +197,7 @@ npm run build
 ./vendor/bin/pest
 ```
 
-8. If you are green, you are good to go, reset your environment
+8. If you are green, you are good to go. You can now reset your environment to begin making changes.
 
 ```bash
 git reset --hard && git clean -df
