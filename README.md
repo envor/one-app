@@ -73,7 +73,7 @@ Next install headerx/laravel-jetstream-passport
 composer require headerx/laravel-jetstream-passport:^1.0
 ```
 > [!IMPORTANT]  
-> Do not run the `jetstream-passport:install` command from [headerx/laravel-jetstream-passport](https://github.com/headerx/laravel-jetstream-passport) when setting up `one-app`! `one-app` has its own command for installing `passport`.
+> Do not run the `jetstream-passport:install` command from [headerx/laravel-jetstream-passport](https://github.com/headerx/laravel-jetstream-passport) when setting up `one-app`! `one-app` has its own command for installing `passport` (shown below).
 
 Then run `one-app:passport` command
 
