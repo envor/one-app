@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.9 - 2024-02-25
+
+### What's Changed
+
+* update readme by @inmanturbo in https://github.com/envor/one-app/pull/9
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.8...v1.0.9
+
 ## v1.0.8 - 2024-02-25
 
 ### What's Changed

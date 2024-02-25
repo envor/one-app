@@ -113,7 +113,7 @@ requirements:
 - composer
 - basic working knowledge of git
 
-1. Setup Laravel Environment in an empty directory
+### 1. Setup Laravel Environment in an empty directory
 
 ```bash
 composer create-project laravel/laravel:11.x-dev .
@@ -134,7 +134,7 @@ echo "one-app/" >> .gitignore
 git add . && git commit -m "setup testing environment"
 ```
 
-2. Clone the repo
+### 2. Clone the repo
 
 SSH
 
@@ -148,13 +148,13 @@ HTTPS
 git clone https://github.com/envor/one-app.git
 ```
 
-3. Install dependencies (in root working directory, not one-app)
+### 3. Install dependencies (in root working directory, not one-app)
 
 ```bash
 composer update "laravel/jetstream" --prefer-dist --no-interaction --no-progress -W
 ```
 
-4. Install one-app (in root working directory, not one-app)
+### 4. Install one-app (in root working directory, not one-app)
 
 ```bash
 composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
@@ -164,25 +164,25 @@ composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
 php artisan one-app:install -v
 ```
 
-5. Install npm dependencies (in root working directory, not one-app)
+### 5. Install npm dependencies (in root working directory, not one-app)
 
 ```bash
 npm install
 ```
 
-6. Compile Assets (in root working directory, not one-app)
+### 6. Compile Assets (in root working directory, not one-app)
 
 ```bash
 npm run build
 ```
 
-7. Execute tests (in root working directory, not one-app)
+### 7. Execute tests (in root working directory, not one-app)
 
 ```bash
 ./vendor/bin/pest
 ```
 
-8. If you are green, you are good to go. You can now reset your environment to begin making changes.
+### 8. If you are green, you are good to go. You can now reset your environment to begin making changes.
 
 ```bash
 git reset --hard && git clean -df
@@ -192,13 +192,13 @@ git reset --hard && git clean -df
 composer install
 ```
 
-9. Make your changes
+### 9. Make your changes
 
 Edit files in `one-app/` directory
 
-10. Test your changes by repeating steps 3-7.
-11. Repeat steps 8-10
-12. Repeat step 11 as many times as needed.
+### 10. Test your changes by repeating steps 3-7.
+### 11. Repeat steps 8-10
+### 12. Repeat step 11 as many times as needed.
 
 ## Changelog
 
