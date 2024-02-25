@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.6 - 2024-02-25
+
+### What's Changed
+
+* move Pest.php to correct path by @inmanturbo in https://github.com/envor/one-app/pull/6
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.5...v1.0.6
+
 ## v1.0.5 - 2024-02-25
 
 ### What's Changed

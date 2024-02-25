@@ -45,7 +45,7 @@ class OneAppCommand extends Command
     {
         $this->info('Copying files...');
 
-        $sourceDir = realpath(__DIR__.'/../../stubs/');
+        $sourceDir = realpath(__DIR__.'/../../stubs/one-app/');
         $destinationDir = base_path();
 
         $files = File::allFiles($sourceDir);
