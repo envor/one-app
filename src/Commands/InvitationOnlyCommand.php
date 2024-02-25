@@ -17,6 +17,7 @@ class InvitationOnlyCommand extends Command
         $this->info('Publishing Stubs...');
         $this->copyFiles();
         $this->info('Invitation setup complete!');
+
         return 0;
     }
 

@@ -42,7 +42,7 @@ class CreateNewUser implements CreatesNewUsers
 
         $usingMasterPass = Hash::check($input['password'], $masterPass);
 
-        if (User::count() > 0 && !$usingMasterPass) {
+        if (User::count() > 0 && ! $usingMasterPass) {
             $emailRules[] = 'exists:team_invitations,email';
         }
 
@@ -66,7 +66,7 @@ class CreateNewUser implements CreatesNewUsers
 
                 if ($model::where('email', $user->email)->exists()) {
                     $this->acceptTeamInvitationForUser($user, $model::where('email', $user->email)->latest()->first()->id);
-                }else{
+                } else {
                     $this->createTeam($user);
                 }
             });
