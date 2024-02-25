@@ -109,22 +109,7 @@ requirements:
 
 - php ^8.2
   - extensions
-    - dom
-    - curl
-    - libxml
-    - mbstring
-    - zip
-    - pcntl
-    - pdo
-    - sqlite
-    - pdo_sqlite
-    - bcmath
-    - soap
-    - intl
-    - gd
-    - exif
-    - iconv
-    - fileinfo  
+    - see https://laravel.com/docs/master/deployment#server-requirements
 - composer
 - basic working knowledge of git
 
