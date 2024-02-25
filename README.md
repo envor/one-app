@@ -211,9 +211,7 @@ composer install
 
 Edit files in `one-app/` directory
 
-10. Test your changes
-
-Repeat steps 3-7.
+10. Test your changes by repeating steps 3-7.
 
 ## Changelog
 
