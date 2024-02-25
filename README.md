@@ -101,6 +101,120 @@ or
 composer test
 ```
 
+## Development
+
+This thing installs stuff. During development the stubs will have to be tested. What follows are instructions for doing so.
+
+requirements:
+
+- php ^8.2
+  - extensions
+    - dom
+    - curl
+    - libxml
+    - mbstring
+    - zip
+    - pcntl
+    - pdo
+    - sqlite
+    - pdo_sqlite
+    - bcmath
+    - soap
+    - intl
+    - gd
+    - exif
+    - iconv
+    - fileinfo  
+- composer
+- basic working knowledge of git
+
+1. Setup Laravel Environment in an empty directory
+
+```bash
+composer create-project laravel/laravel:11.x-dev .
+composer require laravel/jetstream:@dev --no-interaction --no-update
+composer require envor/one-app:@dev --no-interaction --no-update
+composer config repositories.one-app '{"type": "path", "url": "one-app"}' --file composer.json
+```
+
+```bash
+echo "PLATFORM_DB_CONNECTION=sqlite" >> .env
+```
+
+```bash
+echo "one-app/" >> .gitignore
+```
+
+```bash
+git add . && git commit -m "setup testing environment"
+```
+
+2. Clone the repo
+
+SSH
+
+```bash
+git clone git@github.com:envor/one-app.git
+```
+
+HTTPS
+
+```bash
+git clone https://github.com/envor/one-app.git
+```
+
+3. Install dependencies (in root working directory, not one-app)
+
+```bash
+composer update "laravel/jetstream" --prefer-dist --no-interaction --no-progress -W
+```
+
+4. Install one-app (in root working directory, not one-app)
+
+```bash
+composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
+```
+
+```bash
+php artisan one-app:install -v
+```
+
+5. Install npm dependencies (in root working directory, not one-app)
+
+```bash
+npm install
+```
+
+6. Compile Assets (in root working directory, not one-app)
+
+```bash
+npm run build
+```
+
+7. Execute tests (in root working directory, not one-app)
+
+```bash
+./vendor/bin/pest
+```
+
+8. If you are green, you are good to go. You can now reset your environment to begin making changes.
+
+```bash
+git reset --hard && git clean -df
+```
+
+```bash
+composer install
+```
+
+9. Make your changes
+
+Edit files in `one-app/` directory
+
+10. Test your changes by repeating steps 3-7.
+11. Repeat steps 8-10
+12. Repeat step 11 as many times as needed.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

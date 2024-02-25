@@ -18,9 +18,6 @@ class OneAppServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('one-app')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_one-app_table')
             ->hasCommands([
                 OneAppCommand::class,
                 PassportCommand::class,

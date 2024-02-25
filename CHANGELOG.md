@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.7 - 2024-02-25
+
+### What's Changed
+
+* move stubs under one path by @inmanturbo in https://github.com/envor/one-app/pull/7
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.6...v1.0.7
+
 ## v1.0.6 - 2024-02-25
 
 ### What's Changed
