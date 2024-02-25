@@ -65,11 +65,17 @@ php artisan test
 
 If you need it you can set up `one-app` to use `laravel/passport` instead of `laravel/sanctum` which will include a full OAuth2 Server, complete with self-service token and client management ui.
 
-Install headerx/laravel-jetstream-passport
+First follow the steps above to install one-app.
+
+Next install headerx/laravel-jetstream-passport
 
 ```bash
 composer require headerx/laravel-jetstream-passport:^1.0
 ```
+> [!IMPORTANT]  
+> Do not run the `jetstream-passport:install` command from [headerx/laravel-jetstream-passport](https://github.com/headerx/laravel-jetstream-passport) when setting up `one-app`! `one-app` has its own command for installing `passport`.
+
+Then run `one-app:passport` command
 
 ```bash
 php artisan one-app:passport
