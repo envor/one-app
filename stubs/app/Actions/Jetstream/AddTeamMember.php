@@ -17,7 +17,6 @@ use Laravel\Jetstream\Rules\Role;
 
 class AddTeamMember implements AddsTeamMembers
 {
-
     use UsesPlatformConnection;
 
     /**
