@@ -1,6 +1,6 @@
 {
     "name": "envor/one-app",
-    "description": "This is my package one-app",
+    "description": "Database per team starter kit for Laravel based on Laravel Jetstream and Livewire",
     "keywords": [
         "envor",
         "laravel",

@@ -33,6 +33,28 @@ composer require envor/one-app
 php artisan one-app:install
 ```
 
+## SSO (Optional)
+
+Install headerx/laravel-jestream-passport
+
+```bash
+composer require headerx/laravel-jetstream-passport
+```
+
+```bash
+php artisan jetstream-passport:install
+```
+
+Move passport migrations to the platform folder
+
+```bash
+mv database/migrations/*oauth*.php database/migrations/platform
+```
+
+```bash
+php artisan migrate:fresh --path="database/migrations/platform" --database="sqlite"
+```
+
 ## Testing
 
 ```bash
