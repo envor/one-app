@@ -63,7 +63,7 @@ php artisan test
 
 ## SSO (Optional)
 
-If you need it you can set up `one-app` to use laravel/passport instead of `laravel/sanctum` which will include a full OAuth2 Server, complete with self a token and client management ui.
+If you need it you can set up `one-app` to use `laravel/passport` instead of `laravel/sanctum` which will include a full OAuth2 Server, complete with self a token and client management ui.
 
 Install headerx/laravel-jetstream-passport
 
