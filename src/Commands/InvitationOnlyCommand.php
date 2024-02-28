@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 
 class InvitationOnlyCommand extends Command
 {
-    public $signature = 'one-app:invitation-only';
+    public $signature = 'one-app:invitation-only {--super-admin : Make a super admin model class}';
 
     public $description = 'Require invitations to register';
 
@@ -15,17 +15,17 @@ class InvitationOnlyCommand extends Command
     {
         $this->info('Setting up invitation only registration...');
         $this->info('Publishing Stubs...');
-        $this->copyFiles();
+        $this->copyFiles($this->option('super-admin') ? 'invitation-only-super-admin' : 'invitation-only');
         $this->info('Invitation setup complete!');
 
         return 0;
     }
 
-    protected function copyFiles()
+    protected function copyFiles(string $from = 'invitation-only')
     {
         $this->info('Copying files...');
 
-        $sourceDir = realpath(__DIR__.'/../../stubs/invitation-only/');
+        $sourceDir = realpath(__DIR__.'/../../stubs/'.$from);
         $destinationDir = base_path();
 
         $files = File::allFiles($sourceDir);
