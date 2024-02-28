@@ -23,6 +23,7 @@ use Parental\HasChildren;
 class User extends Authenticatable implements HasDatastoreContext
 {
     use HasApiTokens;
+    use HasChildren;
     use HasDatastores;
     use HasFactory;
     use HasPlatformUuids;
@@ -32,7 +33,6 @@ class User extends Authenticatable implements HasDatastoreContext
     use Notifiable;
     use TwoFactorAuthenticatable;
     use UsesPlatformConnection;
-    use HasChildren;
 
     /**
      * The attributes that are mass assignable.
@@ -98,19 +98,19 @@ class User extends Authenticatable implements HasDatastoreContext
 
     protected function getStorableUserTypeName(string|UserType $value): string
     {
-        if($value instanceof UserType){
+        if ($value instanceof UserType) {
             return $value->name;
         }
-        
-        if(!in_array($value, $this->childTypes()) && !in_array($value, array_keys($this->childTypes()))){
+
+        if (! in_array($value, $this->childTypes()) && ! in_array($value, array_keys($this->childTypes()))) {
             throw new \Exception("Invalid user type: {$value}");
         }
 
-        if(in_array($value, $this->childTypes())){
+        if (in_array($value, $this->childTypes())) {
             return UserType::from($value)->name;
         }
 
-        if(in_array($value, $this->childTypes())){
+        if (in_array($value, $this->childTypes())) {
             return UserType::from($value)->name;
         }
 
@@ -119,18 +119,18 @@ class User extends Authenticatable implements HasDatastoreContext
 
     protected function getReadableUserTypeName(string|UserType $value): UserType
     {
-        if($value instanceof UserType){
+        if ($value instanceof UserType) {
             return $value;
         }
 
-        if(!in_array($value, $this->childTypes()) && !in_array($value, array_keys($this->childTypes()))){
+        if (! in_array($value, $this->childTypes()) && ! in_array($value, array_keys($this->childTypes()))) {
             throw new \Exception("Invalid user type: {$value}");
         }
 
-        if(in_array($value, $this->childTypes())){
+        if (in_array($value, $this->childTypes())) {
             return UserType::from($value);
         }
 
-        return constant(UserType::class . '::' . $value);
+        return constant(UserType::class.'::'.$value);
     }
 }
