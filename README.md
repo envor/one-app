@@ -179,7 +179,7 @@ npm run build
 ### 7. Execute tests (in root working directory, not one-app)
 
 ```bash
-./vendor/bin/pest
+php artisan test
 ```
 
 ### 8. If you are green, you are good to go. You can now reset your environment to begin making changes.
