@@ -2,6 +2,19 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.11 - 2024-03-04
+
+### What's Changed
+
+* Bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/envor/one-app/pull/12
+* textarea by @inmanturbo in https://github.com/envor/one-app/pull/13
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/envor/one-app/pull/12
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.10...v1.0.11
+
 ## v1.0.10 - 2024-02-25
 
 ### What's Changed
