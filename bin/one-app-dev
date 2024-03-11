@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+rm -rf app
+composer create-project laravel/laravel:11.x-dev app
+cd app
+composer require laravel/jetstream:@dev --no-interaction --no-update
+composer require envor/one-app:@dev --no-interaction --no-update
+composer config repositories.one-app '{"type": "path", "url": "../"}' --file composer.json
+echo "PLATFORM_DB_CONNECTION=sqlite" >> .env
+git init
+git branch -m main
+git add . && git commit -m "setup testing environment"
+composer update "laravel/jetstream" --prefer-dist --no-interaction --no-progress -W
+composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
+php artisan one-app:install -v
+npm install
+npm run build
+cd ..
