@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid')->index()->unique();
             $table->string('name')->index()->unique();
+            $table->text('migration_path')->nullable();
             $table->string('driver');
             $table->nullableMorphs('owner');
             $table->timestamps();
