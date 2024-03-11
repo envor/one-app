@@ -3,6 +3,7 @@
 namespace Envor\OneApp;
 
 use Envor\OneApp\Commands\InvitationOnlyCommand;
+use Envor\OneApp\Commands\NavigationCommand;
 use Envor\OneApp\Commands\OneAppCommand;
 use Envor\OneApp\Commands\PassportCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -23,6 +24,7 @@ class OneAppServiceProvider extends PackageServiceProvider
                 OneAppCommand::class,
                 PassportCommand::class,
                 InvitationOnlyCommand::class,
+                NavigationCommand::class,
             ]);
     }
 }
