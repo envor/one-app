@@ -28,6 +28,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "livewire/volt": "^1.6",
+        "spatie/laravel-navigation": "^1.2",
         "spatie/laravel-package-tools": "^1.16.2"
     },
     "require-dev": {
