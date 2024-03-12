@@ -44,6 +44,7 @@ jobs:
       - name: Setup Laravel
         run: |
           composer create-project laravel/laravel:11.x-dev .
+          composer config minimum-stability dev --file composer.json
           composer require laravel/jetstream:@dev --no-interaction --no-update
           composer require envor/one-app:@dev --no-interaction --no-update
           composer config repositories.one-app '{"type": "path", "url": "one-app"}' --file composer.json
