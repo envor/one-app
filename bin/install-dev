@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# This script sets up a testing environment for the One App package.
+
+# Set the default install path or use the provided one
+INSTALL_PATH="${1:-$HOME/Sites/one-app-dev}"
+CURRENT_DIR=$(pwd)  # Save the current directory
+LINK=$(basename "$INSTALL_PATH")
+
+# Unlink, remove the old directory, and create a new Laravel application
+valet unlink $LINK
+rm -rf "$INSTALL_PATH"
+composer create-project laravel/laravel:11.x-dev "$INSTALL_PATH"
+
+# Change to the install directory
+pushd "$INSTALL_PATH" > /dev/null
+
+# Configure the project
+composer config minimum-stability dev
+composer require laravel/jetstream:@dev --no-interaction --no-update
+composer require envor/one-app:@dev --no-interaction --no-update
+
+# Set the composer repository URL to the current directory when the script was run
+composer config repositories.one-app "{\"type\": \"path\", \"url\": \"$CURRENT_DIR/\"}" --file composer.json
+
+# Continue with the script
+echo "PLATFORM_DB_CONNECTION=sqlite" >> .env
+git init
+git branch -m main
+git add . && git commit -m "setup testing environment"
+composer update "laravel/jetstream" --prefer-dist --no-interaction --no-progress -W
+composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
+php artisan one-app:install -v
+npm install
+npm run build
+valet link $LINK && valet open
+php artisan test
+
+# Return to the original directory
+popd > /dev/null
+
+echo "One App has been installed at $INSTALL_PATH, you can remove it with 'valet unlink $LINK && rm -rf $INSTALL_PATH'"
