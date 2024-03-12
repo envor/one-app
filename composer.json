@@ -93,6 +93,7 @@
     "prefer-stable": true,
 
     "bin": [
-        "bin/one-app-dev"
+        "bin/one-app-dev",
+        "bin/one-app-package"
     ]
 }

@@ -40,3 +40,8 @@ php artisan test
 popd > /dev/null
 
 echo "One App has been installed at $INSTALL_PATH, you can remove it with 'valet unlink $LINK && rm -rf $INSTALL_PATH'"
+
+echo "open in code with 'code $INSTALL_PATH'"
+
+# Add the install path to the .env file
+echo "# one-app installed at $INSTALL_PATH" >> $CURRENT_DIR/.env

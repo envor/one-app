@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $(basename $0) <package-name> [install-directory]"
+  exit 1
+fi
+
+CURRENT_DIR=$(pwd)  # Save the current directory
+PACKAGE_NAME=$1
+INSTALL_DIRECTORY="${2:-$CURRENT_DIR/dev-package}"
+INSTALL_PATH="$INSTALL_DIRECTORY$(basename $PACKAGE_NAME)"
+
+echo "Installing $PACKAGE_NAME at $INSTALL_PATH"
+echo "directory: $INSTALL_DIRECTORY"
+
+mkdir -p $INSTALL_DIRECTORY
+cd $INSTALL_DIRECTORY
+gh repo create $PACKAGE_NAME --template spatie/package-skeleton-laravel --clone --private
+composer config repositories.$PACKAGE_NAME "{\"type\": \"path\", \"url\": \"$INSTALL_PATH\"}" --file $CURRENT_DIR/composer.json
+cd $(basename $INSTALL_PATH)
+php ./configure.php
+echo "Package has been installed at $INSTALL_PATH"
+echo "open in code with 'code $INSTALL_PATH'"
+echo "# package installed at $INSTALL_PATH" >> $CURRENT_DIR/.env
