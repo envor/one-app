@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+valet unlink one-app-dev
 rm -rf app
 composer create-project laravel/laravel:11.x-dev app
 cd app
@@ -15,4 +16,5 @@ composer update "envor/one-app" --prefer-dist --no-interaction --no-progress -W
 php artisan one-app:install -v
 npm install
 npm run build
+valet link one-app-dev
 cd ..
