@@ -14,13 +14,13 @@ First set up a fresh laravel app:
 ### Using laravel installer
 
 ```bash
-laravel new one-app --dev
+laravel new one-app
 ```
 
 ### Or using composer
 
 ```bash
-composer create project "laravel/laravel:11.x-dev" one-app
+composer create project "laravel/laravel:^11.0" one-app
 ```
 
 ```bash
