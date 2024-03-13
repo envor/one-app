@@ -24,10 +24,12 @@
         "illuminate/contracts": "^11.0",
         "inmanturbo/turbohx": "^1.1",
         "laravel/jetstream": "^5.0@dev",
+        "laravel/pennant": "^1.7",
         "laravel/sanctum": "^4.0@dev",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
         "livewire/volt": "^1.6",
+        "spatie/laravel-navigation": "^1.2",
         "spatie/laravel-package-tools": "^1.16.2"
     },
     "require-dev": {
@@ -89,5 +91,10 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+
+    "bin": [
+        "bin/one-app-dev",
+        "bin/one-app-package"
+    ]
 }

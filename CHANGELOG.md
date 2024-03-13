@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.12 - 2024-03-07
+
+### What's Changed
+
+* phpunit.xml stub by @inmanturbo in https://github.com/envor/one-app/pull/14
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.11...v1.0.12
+
 ## v1.0.11 - 2024-03-04
 
 ### What's Changed

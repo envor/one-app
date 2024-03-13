@@ -5,50 +5,30 @@ namespace Envor\OneApp\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class OneAppCommand extends Command
+class NavigationCommand extends Command
 {
-    public $signature = 'one-app:install';
+    public $signature = 'one-app:navigation';
 
-    public $description = 'My command';
+    public $description = 'install one-app navigation';
 
     public function handle(): int
     {
-        $this->info('Installing Jetstream...');
-
-        $this->callSilent('jetstream:install', [
-            'stack' => 'livewire',
-            '--teams' => true,
-            '--dark' => true,
-            '--api' => true,
-            '--pest' => true,
-            '--no-interaction' => true,
-        ]);
-
-        $this->info('Installing folio...');
-
-        $this->callSilent('folio:install');
-
-        $this->info('Installing volt');
-
-        $this->callSilent('volt:install');
-
+        $this->info('Setting up navigation...');
         $this->info('Publishing Stubs...');
-
         $this->copyFiles();
-
-        $this->info('One App installed');
+        $this->info('Navigation setup complete!');
 
         return 0;
     }
 
-    protected function copyFiles()
+    protected function copyFiles(string $from = 'navigation')
     {
         $this->info('Copying files...');
 
-        $sourceDir = realpath(__DIR__.'/../../stubs/one-app/');
+        $sourceDir = realpath(__DIR__.'/../../stubs/'.$from);
         $destinationDir = base_path();
 
-        $files = File::allFiles($sourceDir, true);
+        $files = File::allFiles($sourceDir);
 
         foreach ($files as $file) {
             $destinationFilePath = $destinationDir.'/'.$file->getRelativePathname();
