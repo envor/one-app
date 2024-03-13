@@ -48,7 +48,7 @@ class OneAppCommand extends Command
         $sourceDir = realpath(__DIR__.'/../../stubs/one-app/');
         $destinationDir = base_path();
 
-        $files = File::allFiles($sourceDir);
+        $files = File::allFiles($sourceDir, true);
 
         foreach ($files as $file) {
             $destinationFilePath = $destinationDir.'/'.$file->getRelativePathname();
