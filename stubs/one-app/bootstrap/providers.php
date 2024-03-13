@@ -6,6 +6,7 @@ return [
     App\Providers\ApiServiceProvider::class,
     App\Providers\AppServiceProvider::class,
     App\Providers\DomainServiceProvider::class,
+    App\Providers\FeaturesServiceProvider::class,
     App\Providers\FolioServiceProvider::class,
     App\Providers\FortifyServiceProvider::class,
     App\Providers\JetstreamServiceProvider::class,

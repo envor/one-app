@@ -24,6 +24,7 @@
         "illuminate/contracts": "^11.0",
         "inmanturbo/turbohx": "^1.1",
         "laravel/jetstream": "^5.0@dev",
+        "laravel/pennant": "^1.7",
         "laravel/sanctum": "^4.0@dev",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
