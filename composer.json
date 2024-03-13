@@ -19,7 +19,7 @@
         "php": "^8.2",
         "envor/laravel-datastore": "^1.2",
         "envor/laravel-schema-macros": "^1.1",
-        "envor/platform": "^1.5",
+        "envor/platform": "^1.6",
         "headerx/laravel-jetstream-passport": "^1.0",
         "illuminate/contracts": "^11.0",
         "inmanturbo/turbohx": "^1.1",

@@ -26,7 +26,7 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" wire:navigate="true">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     
@@ -63,12 +63,12 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" wire:navigate="true">
                                         {{ __('Team Settings') }}
                                     </x-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <x-dropdown-link href="{{ route('teams.create') }}">
+                                        <x-dropdown-link href="{{ route('teams.create') }}" wire:navigate="true">
                                             {{ __('Create New Team') }}
                                         </x-dropdown-link>
                                     @endcan
@@ -118,12 +118,12 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
+                            <x-dropdown-link href="{{ route('profile.show') }}" wire:navigate="true">
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-dropdown-link href="{{ route('api-tokens.index') }}">
+                                <x-dropdown-link href="{{ route('api-tokens.index') }}" wire:navigate="true">
                                     {{ __('API Tokens') }}
                                 </x-dropdown-link>
                             @endif
@@ -159,7 +159,7 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" wire:navigate="true">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
 
