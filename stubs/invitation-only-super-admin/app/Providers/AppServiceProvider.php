@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
             }
         });
 
-        Gate::after(function (SuperAdmin|User $user, string $ability, bool|null $result, mixed $arguments) {
+        Gate::after(function (SuperAdmin|User $user, string $ability, ?bool $result, mixed $arguments) {
             if ($user instanceof SuperAdmin) {
                 return true;
             }
