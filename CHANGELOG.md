@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.17 - 2024-03-14
+
+### What's Changed
+
+* copy hidden files too by @inmanturbo in https://github.com/envor/one-app/pull/19
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.16...v1.0.17
+
 ## v1.0.16 - 2024-03-14
 
 ### What's Changed
