@@ -9,6 +9,9 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+env:
+  APP_KEY: base64:uz4B1RtFO57QGzbZX1kRYX9hIRB50+QzqFeg9zbFJlY=
+
 permissions:
   contents: read
 
@@ -34,20 +37,34 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
 
+      - name: Remove local dev repositories
+        run: composer config --unset repositories
+  
+      - name: generate keys
+        run: |
+          openssl genrsa -out storage/oauth-private.key 4096
+          openssl rsa -in storage/oauth-private.key -pubout -out storage/oauth-public.key
+  
+      - name: fix key permissions
+        run: chmod -R 600 storage/*.key
+
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
+
+      - name: list install dependencies
+        run: composer show -D
+      
+      - name: install NPM dependencies
+        run: npm install
+
+      - name: Compile assets
+        run: npm run build
 
       - name: Copy environment file
         run: cp .env.example .env
 
-      - name: build frontend
-        run: npm install && npm run build
-
       - name: Generate app key
         run: php artisan key:generate
-
-      - name: generate passport keys
-        run: php artisan passport:keys --force --length=4096 --no-interaction
 
       - name: Execute tests
         run: vendor/bin/pest
