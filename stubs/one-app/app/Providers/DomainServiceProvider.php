@@ -27,6 +27,10 @@ class DomainServiceProvider extends ServiceProvider
 
     public function configureRequests()
     {
+        if($this->app->environment('production')) {
+            $this->app['url']->forceScheme('https');
+        }
+
         if (! $this->app->runningInConsole()) {
             $domain = $this->app->request->getHost();
 
