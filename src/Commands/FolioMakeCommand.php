@@ -18,8 +18,7 @@ class FolioMakeCommand extends MakeCommand
      */
     protected $name = 'one-app:make-folio';
 
-
-        /**
+    /**
      * Get the console command arguments.
      */
     protected function getOptions(): array
