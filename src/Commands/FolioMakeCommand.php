@@ -2,7 +2,7 @@
 
 namespace Envor\OneApp\Commands;
 
-use Livewire\Volt\Console\MakeCommand;
+use Laravel\Folio\Console\MakeCommand;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
