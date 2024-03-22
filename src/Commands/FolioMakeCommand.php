@@ -7,7 +7,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 #[AsCommand(name: 'one-app:make-folio')]
-class VoltMakeCommand extends MakeCommand
+class FolioMakeCommand extends MakeCommand
 {
     use HasStubOption;
 
