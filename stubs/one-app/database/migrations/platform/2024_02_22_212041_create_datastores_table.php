@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('datastores', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->index()->unique();
+            $table->string('uuid')->index()->unique();
             $table->string('name')->index()->unique();
             $table->text('migration_path')->nullable();
             $table->string('driver');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->index()->unique();
+            $table->string('uuid')->index()->unique();
             $table->foreignId('user_id')->index();
             $table->string('name');
             $table->string('domain')->nullable()->index()->unique();
