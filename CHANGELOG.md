@@ -2,6 +2,17 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.20 - 2024-06-04
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/envor/one-app/pull/22
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/envor/one-app/pull/23
+* Bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/envor/one-app/pull/24
+* strings for optional uuid types by @inmanturbo in https://github.com/envor/one-app/pull/25
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.19...v1.0.20
+
 ## v1.0.19 - 2024-03-22
 
 ### What's Changed
