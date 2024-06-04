@@ -2,6 +2,46 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.19 - 2024-03-22
+
+### What's Changed
+
+* fix folio make command by @inmanturbo in https://github.com/envor/one-app/pull/21
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.18...v1.0.19
+
+## v1.0.18 - 2024-03-22
+
+### What's Changed
+
+* Make commands by @inmanturbo in https://github.com/envor/one-app/pull/20
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.17...v1.0.18
+
+## v1.0.17 - 2024-03-14
+
+### What's Changed
+
+* copy hidden files too by @inmanturbo in https://github.com/envor/one-app/pull/19
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.16...v1.0.17
+
+## v1.0.16 - 2024-03-14
+
+### What's Changed
+
+* trust proxies by @inmanturbo in https://github.com/envor/one-app/pull/18
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.15...v1.0.16
+
+## v1.0.15 - 2024-03-14
+
+### What's Changed
+
+* update stubs by @inmanturbo in https://github.com/envor/one-app/pull/17
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.14...v1.0.15
+
 ## v1.0.14 - 2024-03-13
 
 ### What's Changed
