@@ -20,7 +20,7 @@ laravel new one-app
 ### Or using composer
 
 ```bash
-composer create project "laravel/laravel:^11.0" one-app
+composer create-project "laravel/laravel:^11.0" one-app
 ```
 
 ```bash
