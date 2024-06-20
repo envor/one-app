@@ -58,6 +58,8 @@ class Team extends JetstreamTeam implements ConfiguresDatastore
     protected function configured(): void
     {
         app()->forgetInstance('team');
+        app()->forgetInstance('datastore_context');
+        app()->instance('datastore_context', $this);
         app()->instance('team', $this);
     }
 }
