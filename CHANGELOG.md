@@ -2,6 +2,19 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.21 - 2024-06-20
+
+### What's Changed
+
+* Fix installation command by @imanghafoori1 in https://github.com/envor/one-app/pull/26
+* Don't check for team until the payload is being created by @inmanturbo in https://github.com/envor/one-app/pull/27
+
+### New Contributors
+
+* @imanghafoori1 made their first contribution in https://github.com/envor/one-app/pull/26
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.20...v1.0.21
+
 ## v1.0.20 - 2024-06-04
 
 ### What's Changed
