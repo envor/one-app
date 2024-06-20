@@ -56,9 +56,9 @@ class DomainServiceProvider extends ServiceProvider
     {
         $this->app['queue']->createPayloadUsing(function () {
 
-            $datastoreContext  = $this->app[HasDatastoreContext::class]->datastoreContext();
+            $datastoreContext = $this->app[HasDatastoreContext::class]->datastoreContext();
 
-            if(! $datastoreContext) {
+            if (! $datastoreContext) {
                 return [];
             }
 
@@ -69,7 +69,7 @@ class DomainServiceProvider extends ServiceProvider
         });
 
         $this->app['events']->listen(JobProcessing::class, function ($event) {
-            if(isset($event->job->payload()['team_uuid'])) {
+            if (isset($event->job->payload()['team_uuid'])) {
                 $team = Team::where('uuid', $event->job->payload()['team_uuid'])->first();
                 $team->configure()->use();
             }
