@@ -43,8 +43,7 @@ class DomainServiceProvider extends ServiceProvider
 
                 // migrate only once a day
                 if (! cache()->has('team_migrated_'.$team->id)) {
-                    $team
-                        ->migrate();
+                    $team->migrate();
                     cache()->put('team_migrated_'.$team->id, true, now()->addDay());
                 }
 
