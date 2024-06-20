@@ -43,8 +43,7 @@ class DomainServiceProvider extends ServiceProvider
 
                 // migrate only once a day
                 if (! cache()->has('team_migrated_'.$team->id)) {
-                    $team
-                        ->migrate();
+                    $team->migrate();
                     cache()->put('team_migrated_'.$team->id, true, now()->addDay());
                 }
 
@@ -55,20 +54,16 @@ class DomainServiceProvider extends ServiceProvider
 
     public function configureQueue()
     {
-        if (isset($this->app['team'])) {
-            $this->app['queue']->createPayloadUsing(function () {
-                return $this->app['team'] ? [
-                    'team_uuid' => $this->app['team']->uuid,
-                ] : [];
-            });
-        }
+        $this->app['queue']->createPayloadUsing(function () {
+            return isset($this->app['team']) ? [
+                'team_uuid' => $this->app['team']->uuid,
+            ] : [];
+        });
 
         $this->app['events']->listen(JobProcessing::class, function ($event) {
-            if (isset($event->job->payload['team_uuid'])) {
-                $team = Team::whereUuid($event->job->payload['team_uuid'])->first();
-                if (isset($team->id)) {
-                    $team->configure()->use();
-                }
+            if (isset($event->job->payload()['team_uuid'])) {
+                $team = Team::where('uuid', $event->job->payload()['team_uuid'])->first();
+                $team->configure()->use();
             }
         });
     }
