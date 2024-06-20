@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.22 - 2024-06-20
+
+### What's Changed
+
+* allow fallback to 'datastore_context' key in container by @inmanturbo in https://github.com/envor/one-app/pull/28
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.21...v1.0.22
+
 ## v1.0.21 - 2024-06-20
 
 ### What's Changed
