@@ -55,13 +55,21 @@ class DomainServiceProvider extends ServiceProvider
     public function configureQueue()
     {
         $this->app['queue']->createPayloadUsing(function () {
-            return isset($this->app['team']) ? [
-                'team_uuid' => $this->app['team']->uuid,
-            ] : [];
+
+            $datastoreContext  = $this->app[HasDatastoreContext::class]->datastoreContext();
+
+            if(! $datastoreContext) {
+                return [];
+            }
+
+            return [
+                'team_uuid' => $datastoreContext->uuid,
+            ];
+
         });
 
         $this->app['events']->listen(JobProcessing::class, function ($event) {
-            if (isset($event->job->payload()['team_uuid'])) {
+            if(isset($event->job->payload()['team_uuid'])) {
                 $team = Team::where('uuid', $event->job->payload()['team_uuid'])->first();
                 $team->configure()->use();
             }
