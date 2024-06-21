@@ -37,10 +37,10 @@ class DatastoreRunCommand extends Command
                 return 1;
             }
 
-            $datastore->database()->run($artisanCommandCallback)->disconnect();
+            $datastore->configure()->use()->database()->run($artisanCommandCallback)->disconnect();
         } else {
             Datastore::all()->each(function ($datastore) use ($artisanCommandCallback) {
-                $datastore->database()->run($artisanCommandCallback)->disconnect();
+                $datastore->configure()->use()->database()->run($artisanCommandCallback)->disconnect();
             });
         }
 
