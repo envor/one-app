@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.23 - 2024-06-21
+
+### What's Changed
+
+* configure and use datastore in datastore run command by @inmanturbo in https://github.com/envor/one-app/pull/29
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.22...v1.0.23
+
 ## v1.0.22 - 2024-06-20
 
 ### What's Changed
