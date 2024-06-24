@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Envor\Datastore\Contracts\HasDatastoreContext;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Pennant\Feature;
 use Laravel\Pennant\Middleware\EnsureFeaturesAreActive;
@@ -28,8 +27,9 @@ class FeaturesServiceProvider extends ServiceProvider
 
         EnsureFeaturesAreActive::whenInactive(
             function (Request $request, array $features) {
-                session()->flash('flash.banner', 'The following features are not available with your current plan: ' . implode(', ', $features));
+                session()->flash('flash.banner', 'The following features are not available with your current plan: '.implode(', ', $features));
                 session()->flash('flash.bannerStyle', 'danger');
+
                 return redirect(config('fortify.home'));
             }
         );
