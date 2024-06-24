@@ -63,7 +63,7 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" wire:navigate="true">
+                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->uuid) }}" wire:navigate="true">
                                         {{ __('Team Settings') }}
                                     </x-dropdown-link>
 
