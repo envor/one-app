@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Envor\Datastore\Contracts\HasDatastoreContext;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Pennant\Feature;
 use Laravel\Pennant\Middleware\EnsureFeaturesAreActive;
@@ -24,12 +23,14 @@ class FeaturesServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-
         Feature::resolveScopeUsing(fn ($driver) => $this->app->make(HasDatastoreContext::class)?->datastoreContext()?->datastore);
 
         EnsureFeaturesAreActive::whenInactive(
             function (Request $request, array $features) {
-                abort(Response::HTTP_FORBIDDEN, 'Feature(s) not active: '.implode(', ', $features));
+                session()->flash('flash.banner', 'The following features are not available with your current plan: '.implode(', ', $features));
+                session()->flash('flash.bannerStyle', 'danger');
+
+                return redirect(config('fortify.home'));
             }
         );
 
