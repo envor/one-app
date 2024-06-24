@@ -82,7 +82,7 @@ state(['navigationMenu' => app(Navigation::class)->tree()]);
                                         </div>
 
                                         @foreach (Auth::user()->allTeams() as $team)
-                                            <x-switchable-team :team="$team" />
+                                            @livewire('one-app-switchable-team', ['team' => $team])
                                         @endforeach
                                     @endif
                                 </div>
