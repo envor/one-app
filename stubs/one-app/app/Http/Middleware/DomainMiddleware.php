@@ -18,7 +18,7 @@ class DomainMiddleware
     {
         $domain = $request->getHost();
 
-        if(! auth()->check()) {
+        if (! auth()->check()) {
             return $next($request);
         }
 
@@ -28,14 +28,13 @@ class DomainMiddleware
         }
 
         if ($request->user()->currentTeam->domain !== $domain) {
-           if ($request->user()->currentTeam->domain) {
-               return redirect($request->user()->currentTeam->url);
+            if ($request->user()->currentTeam->domain) {
+                return redirect($request->user()->currentTeam->url);
             }
 
-            return redirect(config('app.url') . config('fortify.home'));
+            return redirect(config('app.url').config('fortify.home'));
         }
 
         return $next($request);
     }
 }
-
