@@ -23,5 +23,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/teams/{teamUUID}', [TeamController::class, 'show'])->name('teams.show');
+    Route::get('/teams/{team}', [TeamController::class, 'show'])->name('teams.show');
 });
