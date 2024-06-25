@@ -2,6 +2,15 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.24 - 2024-06-24
+
+### What's Changed
+
+* switchable team and domain middleware improvements by @inmanturbo in https://github.com/envor/one-app/pull/30
+* uuid team navigation by @inmanturbo in https://github.com/envor/one-app/pull/31
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.23...v1.0.24
+
 ## v1.0.23 - 2024-06-21
 
 ### What's Changed
