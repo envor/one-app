@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.25 - 2024-06-25
+
+### What's Changed
+
+* use team not team uuid to override default jetstream route by @inmanturbo in https://github.com/envor/one-app/pull/32
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.24...v1.0.25
+
 ## v1.0.24 - 2024-06-24
 
 ### What's Changed
