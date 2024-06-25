@@ -15,9 +15,9 @@ class TeamController extends Controller
      * @param  int  $teamId
      * @return \Illuminate\View\View
      */
-    public function show(Request $request, $teamUUID)
+    public function show(Request $request, $team)
     {
-        $team = Jetstream::newTeamModel()->where('uuid', $teamUUID)->firstOrFail();
+        $team = Jetstream::newTeamModel()->where('uuid', $team)->firstOrFail();
 
         if (Gate::denies('view', $team)) {
             abort(403);
