@@ -32,7 +32,7 @@ class TeamPolicy
      */
     public function create(User $user): bool
     {
-        return $user->type === UserType::SuperAdmin || $user->type === UserType::UpgradedUser;
+        return UserType::SuperAdmin === $user->type || UserType::UpgradedUser === $user->type;
     }
 
     /**
@@ -40,7 +40,7 @@ class TeamPolicy
      */
     public function update(User $user, Team $team): bool
     {
-        return $user->ownsTeam($team) && cache()->get('team:lock_db:'.$team->uuid, false) === false;
+        return $user->ownsTeam($team) && false === cache()->get('team:lock_db:'. $team->uuid, false);
     }
 
     /**
