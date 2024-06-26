@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.26 - 2024-06-26
+
+### What's Changed
+
+* improve invitation-only-super-admin by @inmanturbo in https://github.com/envor/one-app/pull/33
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.25...v1.0.26
+
 ## v1.0.25 - 2024-06-25
 
 ### What's Changed
