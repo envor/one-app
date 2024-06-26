@@ -23,6 +23,10 @@ class TeamController extends Controller
             abort(403);
         }
 
+        if ($team->uuid != $request->user()->currentTeam->uuid) {
+            return redirect()->route('teams.show', $request->user()->currentTeam->uuid);
+        }
+
         return view('teams.show', [
             'user' => $request->user(),
             'team' => $team,

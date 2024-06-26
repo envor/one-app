@@ -9,4 +9,5 @@ enum UserType: string
 {
     case User = User::class;
     case SuperAdmin = SuperAdmin::class;
+    case UpgradedUser = UpgradedUser::class;
 }
