@@ -2,6 +2,15 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.27 - 2024-07-10
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/envor/one-app/pull/34
+* Add select component to base install by @inmanturbo in https://github.com/envor/one-app/pull/35
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.26...v1.0.27
+
 ## v1.0.26 - 2024-06-26
 
 ### What's Changed
