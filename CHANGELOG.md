@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.29 - 2024-07-10
+
+### What's Changed
+
+* Run all migrations for tests by @inmanturbo in https://github.com/envor/one-app/pull/37
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.28...v1.0.29
+
 ## v1.0.28 - 2024-07-10
 
 ### What's Changed
