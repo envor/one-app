@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\DomainMiddleware;
+use App\Http\Middleware\SharedMigrationsMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // push some middeleware to the web group
         $middleware->appendToGroup('web', [
             DomainMiddleware::class,
+            SharedMigrationsMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
