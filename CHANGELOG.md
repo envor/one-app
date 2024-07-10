@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.28 - 2024-07-10
+
+### What's Changed
+
+* User Factory for invitation-only-super-admin and shared migrations for all by @inmanturbo in https://github.com/envor/one-app/pull/36
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.27...v1.0.28
+
 ## v1.0.27 - 2024-07-10
 
 ### What's Changed
