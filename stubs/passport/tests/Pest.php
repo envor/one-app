@@ -30,6 +30,8 @@ uses(TestCase::class)
         config(['database.connections.testing_app' => config('database.connections.sqlite')]);
 
         Artisan::call('migrate:fresh --database=testing_platform --path=database/migrations/platform');
+        Artisan::call('migrate:fresh --database=testing_app --path=database/migrations/shared');
+        Artisan::call('migrate --database=testing_app');
 
         Artisan::call('passport:keys', ['--length' => 4096]);
     })
