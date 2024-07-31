@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function getConnection()
-    {
-        return config('database.platform', 'testing');
-    }
-
     public function up()
     {
         Schema::create('datastores', function (Blueprint $table) {
@@ -22,5 +17,10 @@ return new class extends Migration
             $table->nullableMorphs('owner');
             $table->timestamps();
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('datastores');
     }
 };
