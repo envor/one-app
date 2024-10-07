@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "envor/laravel-datastore": "^1.2.14",
+        "envor/laravel-datastore": "^2.0.0",
         "envor/laravel-schema-macros": "^1.1",
         "envor/platform": "^1.6",
         "headerx/laravel-jetstream-passport": "^1.0",
