@@ -2,6 +2,14 @@
 
 All notable changes to `one-app` will be documented in this file.
 
+## v1.0.32 - 2024-12-19
+
+### What's Changed
+
+* upgrade datastore by @inmanturbo in https://github.com/envor/one-app/pull/41
+
+**Full Changelog**: https://github.com/envor/one-app/compare/v1.0.31...v1.0.32
+
 ## v1.0.31 - 2024-07-31
 
 ### What's Changed
